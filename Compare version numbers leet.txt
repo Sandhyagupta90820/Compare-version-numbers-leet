@@ -1,0 +1,13 @@
+class Solution:
+    def compareVersion(self, version1, version2):
+        v1 = list(map(int, version1.split('.')))
+        v2 = list(map(int, version2.split('.')))
+        length = max(len(v1), len(v2))
+        v1 += [0] * (length - len(v1))
+        v2 += [0] * (length - len(v2))
+        if v1 < v2:
+            return -1
+        elif v1 > v2:
+            return 1
+        else:
+            return 0
